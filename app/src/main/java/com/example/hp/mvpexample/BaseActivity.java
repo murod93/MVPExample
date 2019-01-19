@@ -19,6 +19,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         Toast.makeText(this, msg, duration).show();
     }
 
+    
+    protected void showAlertMessage(String title, String message){
+        // TODO: 1/19/2019 implement alert dialog 
+    }
+
     protected void showProgress(String title, String message){
         dialog = new ProgressDialog(this);
         dialog.setTitle(title);
@@ -31,5 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             dialog.dismiss();
         }
     }
+    
+    
 
 }
