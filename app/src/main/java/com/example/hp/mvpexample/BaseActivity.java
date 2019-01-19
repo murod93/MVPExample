@@ -2,6 +2,8 @@ package com.example.hp.mvpexample;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -20,8 +22,16 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     
-    protected void showAlertMessage(String title, String message){
-        // TODO: 1/19/2019 implement alert dialog 
+    protected void showAlertMessage(String title, String message,
+                                    DialogInterface.OnClickListener okClick,
+                                    DialogInterface.OnClickListener cancelClick){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setPositiveButton("OK", okClick);
+        builder.setNegativeButton("Cancel", cancelClick);
+        builder.create();
+        builder.show();
     }
 
     protected void showProgress(String title, String message){
@@ -36,7 +46,4 @@ public abstract class BaseActivity extends AppCompatActivity {
             dialog.dismiss();
         }
     }
-    
-    
-
 }
