@@ -1,11 +1,14 @@
 package com.example.hp.mvpexample;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 public abstract class BaseActivity extends AppCompatActivity {
+
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +19,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         Toast.makeText(this, msg, duration).show();
     }
 
-    protected void showProgress(){
-        // TODO: 1/19/2019 implement custom progress
+    protected void showProgress(String title, String message){
+        dialog = new ProgressDialog(this);
+        dialog.setTitle(title);
+        dialog.setMessage(message);
+        dialog.show();
     }
 
     protected void hideProgress(){
-        // TODO: 1/19/2019 implement hide progress dialog
+        if (dialog!=null){
+            dialog.dismiss();
+        }
     }
 
 }
