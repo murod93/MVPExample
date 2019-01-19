@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hp.mvpexample">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".root.App"
@@ -19,10 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".profile.ProfileActivity" />
-        <activity
-            android:name=".login.LoginActivity"/>
+        <activity android:name=".profile.ProfileActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".BaseActivity"></activity>
     </application>
 
 </manifest>

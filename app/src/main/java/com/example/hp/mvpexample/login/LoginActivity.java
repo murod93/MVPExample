@@ -7,12 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hp.mvpexample.BaseActivity;
 import com.example.hp.mvpexample.R;
 import com.example.hp.mvpexample.root.App;
 
 import javax.inject.Inject;
 
-public class LoginActivity extends AppCompatActivity implements LoginActivityMVP.View{
+public class LoginActivity extends BaseActivity implements LoginActivityMVP.View{
 
     @Inject
     LoginActivityMVP.Presenter presenter;
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityMVP
 
     @Override
     public void showInputError() {
-        Toast.makeText(this, "First Name or Last Name can not be empty", Toast.LENGTH_SHORT).show();
+        showToast("First Name or Last Name can not be empty", Toast.LENGTH_SHORT);
     }
 
     @Override
